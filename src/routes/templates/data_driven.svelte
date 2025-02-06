@@ -9,7 +9,7 @@
 	}
 </script>
 
-<Navigation/>
+<Navigation />
 
 <div class="relative min-h-screen overflow-hidden">
 	<!-- Background Blobs -->
