@@ -12,11 +12,9 @@
 <div class="">
 	<CirclesRight />
 </div>
-<Navigation/>
+<Navigation />
 <div class="flex min-h-screen items-center justify-center">
-	
 	<div class="fade-down relative flex flex-col items-center justify-center text-center">
-		
 		<!-- Blob Positioned Behind Everything -->
 		<div class="absolute inset-0 z-[-1] flex items-center justify-center">
 			<HomeBlob />
@@ -27,7 +25,7 @@
 
 		<!-- Main Text Content -->
 		<div class="mt-2 text-[28px] font-bold text-[#D12F2B]">Events, simplified.</div>
-		<div class="mt-2 w-[650px] text-center text-[20px] text-black">
+		<div class="mt-2 w-[650px] text-center text-[20px] text-[#3E3C3D]">
 			Streamline event registration with Veent. Our user-friendly web app makes creating events a
 			breeze. Packed with features and affordable pricing, Veent simplifies event management for
 			everyone.

@@ -1,5 +1,6 @@
 <script>
 	import { pageTabs } from '../../stores/userVariables';
+
 	const tabs = [
 		{ name: 'home', label: 'Home' },
 		{ name: 'aboutUs', label: 'About Us' },
@@ -7,11 +8,8 @@
 		{ name: 'pricing', label: 'Pricing' },
 		{ name: 'contactUs', label: 'Contact Us' }
 	];
-	//   const tabs = ["home",
-	//              "aboutUs",
-	//              "features",
-	//              "pricing",
-	//              "contactUs"];
+
+	let menuOpen = false;
 </script>
 
 <nav
@@ -22,7 +20,7 @@
 		<img class="w-[6rem]" src="/veent-logo.svg" alt="veent" />
 	</div>
 
-	<ul class="flex space-x-4">
+	<ul class="hidden space-x-4 md:flex">
 		{#each tabs as tab}
 			<li>
 				<button
@@ -31,6 +29,26 @@
                     {$pageTabs === tab.name
 						? 'border-[#D12F2B] text-[#D12F2B]'
 						: 'border-transparent text-[#D12F2B] hover:border-[#D12F2B] hover:text-[#D12F2B]'}"
+				>
+					{tab.label}
+				</button>
+			</li>
+		{/each}
+	</ul>
+
+	<!-- Mobile Menu -->
+	<ul
+		class="absolute left-0 top-[60px] flex w-full transform flex-col items-center bg-white shadow-md transition-transform duration-300 md:hidden"
+		style="transform: translateY({menuOpen ? '0' : '-100%'})"
+	>
+		{#each tabs as tab}
+			<li class="w-full border-b text-center">
+				<button
+					on:click={() => {
+						$pageTabs = tab.name;
+						menuOpen = false;
+					}}
+					class="block w-full py-4 text-lg text-black transition-all"
 				>
 					{tab.label}
 				</button>
