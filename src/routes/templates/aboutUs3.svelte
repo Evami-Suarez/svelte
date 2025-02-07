@@ -1,13 +1,10 @@
 <script lang=ts>
   import AboutusCircle from '$lib/aboutus-circle.svelte';
-  import Navigation from './navigation.svelte';
   import { pageTabs } from '../../stores/userVariables';
   
 </script>
-<div class="background relative min-h-screen text-gray-900">
-    
-  <Navigation/>
-<!-- Blob Container -->
+
+
  
 <div class="blob"></div>
 
@@ -55,5 +52,4 @@ class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center
 </a>
       </div>
   </section>
-</div>
 </div>

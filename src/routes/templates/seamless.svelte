@@ -4,14 +4,11 @@
 	import Nav from '../icons/nav.svelte';
 	import Seam from '../images/seam.svelte';
 	import Seamless from '../images/seamless.svelte';
-	import Navigation from './navigation.svelte';
 
 	function goBack() {
 		$pageTabs = 'features';
 	}
 </script>
-
-<Navigation/>
 
 <div class="relative min-h-screen overflow-hidden">
 	<!-- Background Blobs -->

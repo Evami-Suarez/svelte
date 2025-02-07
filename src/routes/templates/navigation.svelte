@@ -17,7 +17,7 @@
 "
 >
 	<div>
-		<img class="w-[6rem]" src="/veent-logo.svg" alt="veent" />
+		<img class="w-[6rem] h-400" src="/veent-logo.svg" alt="veent" />
 	</div>
 
 	<ul class="hidden space-x-4 md:flex">

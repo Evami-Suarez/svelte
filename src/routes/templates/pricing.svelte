@@ -3,12 +3,25 @@
 	import CirclesRight from '$lib/circles-right.svelte';
 	import CirclesPricing from '$lib/circlesPricing.svelte';
 	import PricingBlob from '$lib/pricingBlob.svelte';
+	import { onMount } from 'svelte';
+  
+  let isMobile = false;
+  
+  // Check window width on mount
+  onMount(() => {
+    isMobile = window.innerWidth < 640; // Adjust this value if needed
+    window.addEventListener('resize', () => {
+      isMobile = window.innerWidth < 640;
+    });
+  });
+
+
+
+	
 	CirclesRight;
-	import Navigation from './navigation.svelte';
 
 	let currentYear = new Date().getFullYear();
 </script>
-<Navigation/>
 
 <div class="min-h-screen font-sans">
 	<main class="mx-auto max-w-5xl px-8 py-16 text-center">
@@ -31,11 +44,11 @@
 				</button>
 			</a>
 
-			<div class="">
+			<div class:hidden={isMobile}>
 				<CirclesPricing />
 			</div>
 
-			<div class="absolute inset-1 z-[-1] p-[50px]">
+			<div class="absolute inset-1 z-[-1] p-[50px]"class:hidden={isMobile}>
 				<PricingBlob />
 			</div>
 

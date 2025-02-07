@@ -13,8 +13,13 @@
 	import Seamless from './templates/seamless.svelte';
 	import Stream from './templates/stream.svelte';
 	import DataDriven from './templates/data_driven.svelte';
+	import NavigationTesting from './templates/navigationtesting.svelte'
+	import ScrollToTop from './templates/scrolltotop.svelte'
 	$pageTabs = 'home';
 </script>
+
+<div class="container mx-auto w-full">
+	<NavigationTesting />
 
 
 
@@ -43,3 +48,6 @@
 {:else if $pageTabs == 'data_driven'}
 	<DataDriven />
 {/if}
+
+<ScrollToTop />
+</div>

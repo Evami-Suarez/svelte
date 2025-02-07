@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { pageTabs } from '../../stores/userVariables';
 	import Effort from '../images/effort.svelte';
-	import Navigation from './navigation.svelte';
+
 	
 
 	// @ts-ignore
@@ -10,7 +10,7 @@
 	}
 	
 </script>
-<Navigation />
+
 
 
 

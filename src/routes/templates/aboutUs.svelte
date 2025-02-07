@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import CirclesRight from '$lib/circles-right.svelte';
-	import Navigation from './navigation.svelte';
 	import Aboutusblob from '../icons/aboutusblob.svelte';
 
 	// let circles:any = [];
@@ -61,10 +60,6 @@
   }
 </style> -->
 <CirclesRight />
-<div
-	class="relative h-screen min-h-screen w-full bg-[url('/ic')] bg-cover bg-center text-gray-900 sm:bg-contain md:bg-cover"
->
-	<Navigation />
 
 	<!-- Floating Circles -->
 	<!-- {#each circles as circle}
@@ -127,4 +122,4 @@ bg-red-500 shadow-lg transition-transform hover:scale-110 hover:animate-bounce"
 			</div>
 		</section>
 	</div>
-</div>
+

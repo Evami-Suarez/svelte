@@ -2,7 +2,6 @@
 	import { pageTabs } from '../../stores/userVariables';
 	import Nav from '../icons/nav.svelte';
 	import Smart from '../images/smart.svelte';
-	import Navigation from './navigation.svelte';
 
 
 
@@ -12,7 +11,6 @@
 
 	
 </script>
-<Navigation/>
 
 <div class="relative min-h-screen overflow-hidden">
 

@@ -1,12 +1,8 @@
 <script lang="ts">
-	import Navigation from './navigation.svelte';
 	import CustomizedAboutusCircle from '$lib/customized-aboutus-circle.svelte';
 	import { pageTabs } from '../../stores/userVariables';
 </script>
 
-<div class="relative min-h-screen bg-gradient-to-r from-white via-pink-50 to-white">
-	<!-- Navigation Bar -->
-	<Navigation />
 	<div class="relative md:w-1/3">
 		<img
 			src="/path/to/your/image.png"
@@ -69,4 +65,4 @@
 		class="absolute left-[-150px] top-[-100px] z-[-1] h-[500px] w-[500px] rounded-full bg-gradient-to-r from-pink-300
                 via-red-300 to-orange-300 opacity-30"
 	></div>
-</div>
+

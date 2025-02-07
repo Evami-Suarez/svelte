@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Smallblob from '$lib/smallblob.svelte';
 	import { pageTabs } from '../../stores/userVariables';
-	import Navigation from './navigation.svelte';
 
 	interface Feature {
 		title: string;
@@ -21,7 +20,6 @@
 		$pageTabs = route;
 	}
 </script>
-<Navigation />
 
 
 <div class="relative my-[-20px] overflow-hidden">

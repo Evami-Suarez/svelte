@@ -2,6 +2,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+html {
+	margin: 0;
+}
 .background {
 	min-height: 100vh;
 	position: relative;
@@ -61,15 +64,46 @@
 	animation: fadeLeft var(--animation-duration) ease-out;
 }
 
+.border-slide {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .border-slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .border-slide.active::after {
+    transform: scaleX(1);
+  }
+  
+  .border-slide:hover::after {
+    transform: scaleX(1);}
+
+
 body {
-	font-family: 'Roboto';
+	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	color: #333;
 	line-height: 1.6;
-}
-
-body {
 	position: relative;
+	min-height: 100vh;
+	margin: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #f8f8f8; /* Ensure there's a base background color */
 }
 
 body::before,
@@ -77,25 +111,72 @@ body::after {
 	content: '';
 	position: absolute;
 	border-radius: 50%;
-	opacity: 0.2;
+	opacity: 0.3;
 	filter: blur(100px);
 }
 
+/* Desktop View */
 body::before {
-	right: -60px;
-	top: -60px;
-	width: 600px;
-	height: 600px;
+	right: 5vw;
+	top: -10vh;
+	width: 50vw;
+	height: 50vh;
 	background-color: #d12b7a;
 }
 
 body::after {
-	bottom: -60px;
-	left: -60px;
-	width: 600px;
-	height: 600px;
+	bottom: -10vh;
+	left: 5vw;
+	width: 50vw;
+	height: 50vh;
 	background-color: #d1822b;
 }
+
+/* Tablet View */
+@media screen and (max-width: 1024px) {
+	body::before,
+	body::after {
+		width: 45vw;
+		height: 45vh;
+	}
+	
+	body::before {
+		right: 5vw;
+		top: -8vh;
+	}
+	
+	body::after {
+		bottom: -8vh;
+		left: 5vw;
+	}
+}
+
+/* Mobile View */
+@media screen and (max-width: 640px) {
+	body {
+		font-size: 14px;
+	}
+
+	body::before,
+	body::after {
+		width: 55vw; /* Increased size */
+		height: 55vh;
+		
+		opacity: 0.4; /* Slightly increased for better visibility */
+	}
+	
+	body::before {
+		right: 10%;
+		top: -5vh;
+	}
+	
+	body::after {
+		bottom: -5vh;
+		left: 10%;
+	}
+}
+
+
 
 h1,
 h2,

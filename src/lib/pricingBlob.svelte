@@ -147,4 +147,10 @@
 			transform: translate(-50%, -50%) scale(1);
 		}
 	}
+
+	@media (max-width: 768px) {
+  .blob {
+    display: none;
+  }
+}
 </style>

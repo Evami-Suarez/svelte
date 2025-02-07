@@ -10,7 +10,7 @@
 	}
 </script>
 
-<div bind:this={blob} class="blob">
+<div bind:this={blob} class="blob hidden sm:block"> <!-- Added hidden sm:block here -->
 	<span></span>
 	<span></span>
 </div>
@@ -19,7 +19,7 @@
 	.blob {
 		--size: 900px;
 		position: absolute;
-		width: 60%;
+		width: 40%;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
@@ -38,14 +38,6 @@
 		top: calc(50% - var(--size) / 2);
 		transition: 1s all 0.13s ease-in-out;
 	}
-
-	/* .blob.fast > span {
-      animation: rotate 1s infinite linear both;
-    } */
-
-	/* .blob.fast > span:last-child {
-      animation-direction: reverse;
-    } */
 
 	.blob > span:first-child {
 		left: calc(50% - var(--size) / 2);
@@ -97,22 +89,6 @@
 			linear-gradient(#f5d5d4, #de6d6a) 50% 50% / 100% 100%;
 		background-repeat: no-repeat;
 	}
-
-	/* .blob.active > span:last-child::before {
-      scale: 3;
-      opacity: 0.2;
-      background-size: 200% 200%;
-    }
-  
-    .blob.active > span:first-child {
-      top: 80%;
-      left: 5%;
-    }
-  
-    .blob.active > span:last-child {
-      top: 90%;
-      right: 5%;
-    } */
 
 	@keyframes rotate {
 		0% {

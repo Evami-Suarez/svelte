@@ -19,13 +19,24 @@
 	import Picture from '../icons/picture.svelte';
 	import Tiktok from '../icons/tiktok.svelte';
 	import Twitter from '../icons/twitter.svelte';
-	import Navigation from './navigation.svelte';
 	import 'animate.css';
 	let currentYear = new Date().getFullYear();
+	import { onMount } from 'svelte';
+  
+  let isMobile = false;
+  
+  // Check window width on mount
+  onMount(() => {
+    isMobile = window.innerWidth < 640; // Adjust this value if needed
+    window.addEventListener('resize', () => {
+      isMobile = window.innerWidth < 640;
+    });
+  });
+
 </script>
 
 <div class="background relative">
-	<Navigation classNames="relative z-50" />
+
 	<!-- Upper right circle -->
 	<div
 		class="absolute -right-60 -top-60 h-[600px] w-[600px] rounded-full bg-[#D12B7A] opacity-20 blur-[100px]"
@@ -42,8 +53,9 @@
 			<!-- Made flex column on mobile -->
 			<div class="relative flex-1 rounded-3xl">
 				<!-- Blob added here and positioned behind content -->
+				 <div class:hidden={isMobile}>
 				<ContactBlob />
-
+			</div>
 				<h1
 					class="animate__animated animate__fadeInLeft mb-4 text-3xl font-bold text-red-600 lg:text-4xl"
 				>
@@ -67,14 +79,16 @@
 			</div>
 
 			<div class="flex flex-1 flex-col gap-6 lg:gap-10">
+				<div class:hidden={isMobile}>
 				<CirclesUpperRight />
 				<CirclesLowerRight />
+				</div>
 				<!-- Locate us section -->
 				<div class="">
 					<h2 class="mb-4 text-2xl font-extrabold text-red-600 lg:text-[32px]">Locate Us</h2>
-					<div class="mb-4 flex flex-col items-start gap-4 sm:flex-row">
+					<div class="mb-4 flex flex-col items-start gap-4 sm:flex-row ">
 						<Location />
-						<p class="lg:text-md text-sm">
+						<p class="lg:text-md text-sm ">
 							2nd Floor, Lifestyle District,<br />Corrales Ext., Cagayan de Oro City 9000
 						</p>
 					</div>

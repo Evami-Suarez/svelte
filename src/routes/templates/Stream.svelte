@@ -2,7 +2,6 @@
 	import { pageTabs } from '../../stores/userVariables';
 	import Nav from '../icons/nav.svelte';
 	import Stream from '../images/stream.svelte';
-	import Navigation from './navigation.svelte';
 
 	function goBack() {
 		$pageTabs = 'features';
@@ -10,8 +9,7 @@
 </script>
 
 <div class="relative min-h-screen overflow-hidden">
-	<Navigation/>
-	<!-- Background Blobs -->
+		<!-- Background Blobs -->
 	<div class="absolute left-[5%] top-[10%] h-4 w-4 rounded-full bg-pink-200/50" />
 	<div class="absolute right-[10%] top-[15%] h-3 w-3 rounded-full bg-orange-200/50" />
 	<div class="absolute bottom-[20%] left-[15%] h-5 w-5 rounded-full bg-red-200/50" />
